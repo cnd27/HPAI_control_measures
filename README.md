@@ -1,6 +1,6 @@
 # A modelling assessment for the impact of control measures on highly pathogenic avian influenza transmission in poultry in Great Britain
 
-This repository contains files for the analysis presented in the scientific paper "A modelling assessment for the impact of control measures on highly pathogenic avian influenza transmission in poultry in Great Britain" by Christopher N Davis, Edward M Hill, Chris P Jewell, Kristyna Rysava, Robin N Thompson and Michael J Tildesley 
+This repository contains files for the analysis presented in the scientific paper "A modelling assessment for the impact of control measures on highly pathogenic avian influenza transmission in poultry in Great Britain" by Christopher N Davis, Edward M Hill, Chris P Jewell, Kristyna Rysava, Robin N Thompson and Michael J Tildesley.
 
 
 Included python files are for MCMC fitting and model simulation for a between poultry premises transmission model for highly pathogenic avian influenza (HPAI).
@@ -73,8 +73,8 @@ See `requirements.txt` for full list and exact versions, but the key libraries u
 
 ## Author
 
-Christopher Davis
-University of Warwick
+Christopher Davis, University of Warwick
+
 GitHub: [@cnd27](https://github.com/cnd27)
 
 ---
