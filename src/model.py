@@ -1559,7 +1559,7 @@ class Model:
         self.biosecurity_times[farms_in] = 0
 
 
-    def save_chain(self, chain_num, save_tmp=None, directory='../Outputs/'):
+    def save_chain(self, chain_num, save_tmp=None, directory='../outputs/'):
         """Save outputs from the MCMC."""
         if save_tmp is None:
             total_iter = self.max_iter
@@ -1594,7 +1594,7 @@ class Model:
         np.save(directory + 'neg_log_like_chain_' + self.chain_string + str(chain_num) + '.npy', self.neg_log_like_chain[:total_iter + 1])
         np.save(directory + 'neg_log_post_chain_' + self.chain_string + str(chain_num) + '.npy', self.neg_log_post_chain[:total_iter + 1])
 
-    def load_chains(self, chain_nums, max_iter, to_fit=None, directory='../Outputs/'):
+    def load_chains(self, chain_nums, max_iter, to_fit=None, directory='../outputs/'):
         """Load the MCMC chains."""
         self.max_iter = max_iter
         self.chain_string = (self.data.date_start.strftime('%Y%m%d') + '_' + self.data.date_end.strftime('%Y%m%d') +
@@ -1672,7 +1672,7 @@ class Model:
         self.infected_chains = tmp1
         self.exit_chains = tmp2
 
-    def save_projections(self, directory='../Outputs/', max_iter=None, save_full=False):
+    def save_projections(self, directory='../outputs/', max_iter=None, save_full=False):
         """Save projections."""
         if max_iter is not None:
             self.max_iter = max_iter
@@ -1705,7 +1705,7 @@ class Model:
                     time_to_notif)
         np.save(directory + 'post_idx_' + self.chain_string + 'reps_' + str(self.reps) + '.npy', self.post_idx)
 
-    def load_projections(self, reps, max_iter, date_start, date_end, directory='../Outputs/', include_total=False, save_full=False, biosecurity_level=None, biosecurity_duration=None, biosecurity_zone=None):
+    def load_projections(self, reps, max_iter, date_start, date_end, directory='../outputs/', include_total=False, save_full=False, biosecurity_level=None, biosecurity_duration=None, biosecurity_zone=None):
         """Load projections."""
         self.max_iter = max_iter
         self.reps = reps

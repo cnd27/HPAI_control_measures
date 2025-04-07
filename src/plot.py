@@ -11,11 +11,11 @@ data_start = pd.to_datetime('2022-10-01')
 data_end = pd.to_datetime('2023-09-30')
 
 # Load and format the data
-data = model.Data('../Data/premises_data_model',
-                  '../Data/case_data_',
-                  '../Data/matched_premises,
-                  '../Data/NUTS1_Jan_2018_SGCB_in_the_UK.shp',
-                  '../Data/CTYUA_MAY_2023_UK_BGC.shp',
+data = model.Data('../data/premises_data_model',
+                  '../data/case_data_',
+                  '../data/matched_premises,
+                  '../data/NUTS1_Jan_2018_SGCB_in_the_UK.shp',
+                  '../data/CTYUA_MAY_2023_UK_BGC.shp',
                   date_start=data_start, date_end=data_end, grid_size=10, adapt=False, select_region=None)
 
 # Choose model options
@@ -47,10 +47,10 @@ zones = [x for x in [5, 10, 15, 'county', 'region'] for _ in range(16)]
 
 # Run enhanced control projections
 if pre_load:
-    control_all = np.load('../Data/control_all.npy')
-    control_50 = np.load('../Data/control_50.npy')
-    control_975 = np.load('../Data/control_975.npy')
-    control_025 = np.load('../Data/control_025.npy')
+    control_all = np.load('../data/control_all.npy')
+    control_50 = np.load('../data/control_50.npy')
+    control_975 = np.load('../data/control_975.npy')
+    control_025 = np.load('../data/control_025.npy')
 else:
     final_size_50 = np.zeros(80)
     final_size_975 = np.zeros(80)
@@ -61,13 +61,13 @@ else:
         level = levels[d]
         duration = durations[d]
         zone = zones[d]
-        data = model.Data('../Data/HPAI_Farm_Data_2_update2.txt',
-                          '../Data/case_data_20230424_update2.xlsx',
-                          '../Data/MatchedFarms_update2.txt',
-                         '../Data/NUTS1_Jan_2018_SGCB_in_the_UK.shp',
-                        '../Data/CTYUA_MAY_2023_UK_BGC.shp',
+        data = model.Data('../data/HPAI_Farm_Data_2_update2.txt',
+                          '../data/case_data_20230424_update2.xlsx',
+                          '../data/MatchedFarms_update2.txt',
+                         '../data/NUTS1_Jan_2018_SGCB_in_the_UK.shp',
+                        '../data/CTYUA_MAY_2023_UK_BGC.shp',
                           date_start=data_start, date_end=data_end, grid_number=20, adapt=False,
-                          file_path_spatial='../Data/q_seasons2.csv', select_region=None)
+                          file_path_spatial='../data/q_seasons2.csv', select_region=None)
         modelb = model.Model(data, transmission_type=1, kernel_type='cauchy', spatial=False, combine=False, cull_data=False)
         max_iter = 211000
         chains = [0, 1]
