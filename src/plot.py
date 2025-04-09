@@ -13,7 +13,7 @@ data_end = pd.to_datetime('2023-09-30')
 # Load and format the data
 data = model.Data('../data/premises_data_model',
                   '../data/case_data_',
-                  '../data/matched_premises,
+                  '../data/matched_premises',
                   '../data/NUTS1_Jan_2018_SGCB_in_the_UK.shp',
                   '../data/CTYUA_MAY_2023_UK_BGC.shp',
                   date_start=data_start, date_end=data_end, grid_number=20, adapt=False, select_region=None)
@@ -63,7 +63,7 @@ else:
         zone = zones[d]
         data = model.Data('../data/premises_data_model',
                           '../data/case_data_',
-                          '../data/matched_premises,
+                          '../data/matched_premises',
                           '../data/NUTS1_Jan_2018_SGCB_in_the_UK.shp',
                           '../data/CTYUA_MAY_2023_UK_BGC.shp',
                           date_start=data_start, date_end=data_end, grid_number=20, adapt=False, select_region=None)
