@@ -1,4 +1,6 @@
 import model
+import data_grid_setup
+import plotting_functions
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -11,7 +13,7 @@ data_start = pd.to_datetime('2022-10-01')
 data_end = pd.to_datetime('2023-09-30')
 
 # Load and format the data
-data = model.Data('../data/premises_data_model',
+data = data_grid_setup.Data('../data/premises_data_model',
                   '../data/case_data_',
                   '../data/matched_premises',
                   '../data/NUTS1_Jan_2018_SGCB_in_the_UK.shp',
@@ -61,7 +63,7 @@ else:
         level = levels[d]
         duration = durations[d]
         zone = zones[d]
-        data = model.Data('../data/premises_data_model',
+        data = data_grid_setup.Data('../data/premises_data_model',
                           '../data/case_data_',
                           '../data/matched_premises',
                           '../data/NUTS1_Jan_2018_SGCB_in_the_UK.shp',
@@ -86,8 +88,8 @@ else:
 
 
 # Plot the figures
-model0.plot_figure_1()
-model0.plot_figure_2()
-model0.plot_figure_3(control_all=control_all, base_all=base_all)
-model0.plot_figure_4(base_50=base_50, control_50=control_50, control_975=control_975, control_025=control_025)
+plotting_functions.plot_figure_1(model0)
+plotting_functions.plot_figure_2(model0)
+plotting_functions.plot_figure_3(model0, control_all=control_all, base_all=base_all)
+plotting_functions.plot_figure_4(model0, base_50=base_50, control_50=control_50, control_975=control_975, control_025=control_025)
 plt.show()

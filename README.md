@@ -9,9 +9,13 @@ Included python files are for MCMC fitting and model simulation for a between po
 
 ## Python files
 
-plot.py runs the model to generate the figures seen in the manuscript.
+plot_figures.py runs the model to generate the figures seen in the manuscript.
 
-model.py is the model code used in plot.py.
+model.py is the model code for fitting and simulations.
+
+data_grid_setup.py formats the data for model input and grids the geographical space.
+
+plotting_functions.py are the functions to produce the manuscript figures.
 
 matching_premises.py ensures consistency between data sets.
 
@@ -49,8 +53,10 @@ HPAI_control_measures/
 ├── data/                         # Input data
 ├── output/                       # Output files
 ├── src/                          # Python scripts
-│   └── model.py                  # Main script
-│   └── plot.py                   # Plotting script
+│   └── plot_figures.py           # Plotting script
+│   └── model.py                  # Main model script
+│   └── data_grid_setup.py        # Data setup script
+│   └── plotting_functions.py     # Figure plotting functions
 │   └── matching_premises.py      # Data script
 ├── requirements.txt              # Dependencies
 └── README.md                     # Instructions
