@@ -164,6 +164,7 @@ class Data:
                                  ((self.grid_location_y <= self.location_y[:, np.newaxis]) &
                                   (self.grid_location_y + self.grid_size > self.location_y[:, np.newaxis])))
                 self.farm_grid = np.argmax(farm_grid_tmp, axis=1)
+                # Get minimum squared distance between grid cells by distance between centroids subtract distance to edge of grids
                 self.dist2 = (np.maximum(0, np.abs(self.grid_location_x[:, np.newaxis] - self.grid_location_x) -
                                          (self.grid_size[:, np.newaxis] / 2 + self.grid_size / 2)) ** 2 +
                               np.maximum(0, np.abs(self.grid_location_y[:, np.newaxis] - self.grid_location_y) -
@@ -201,6 +202,7 @@ class Data:
                 self.n_grids = len(unique_base_grid)
                 all_grid_x = self.grid_location_x[:, np.newaxis] - self.grid_location_x
                 all_grid_y = self.grid_location_y[:, np.newaxis] - self.grid_location_y
+                # Get minimum squared distance between grid cells by distance between centroids subtract distance to edge of grids
                 self.dist2 = np.maximum(0, np.abs(all_grid_x) - self.grid_size) ** 2 + np.maximum(0, np.abs(
                     all_grid_y) - self.grid_size) ** 2
         else:
